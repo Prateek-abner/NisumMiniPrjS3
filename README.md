@@ -4,3 +4,4 @@
 ![image](https://github.com/user-attachments/assets/d4d024d2-e637-411e-88a4-35b7b0270f86)
 ![image](https://github.com/user-attachments/assets/e8340037-2014-42ff-bfef-c15680007111)
 ![image](https://github.com/user-attachments/assets/2990a036-f48e-42b0-9ae3-f27684baa318)
+Run npm install on /fashionhub
