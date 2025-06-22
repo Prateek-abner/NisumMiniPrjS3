@@ -28,7 +28,7 @@ public class User {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    // Constructors
+    
     public User() {}
 
     public User(Integer userId, String firstName, String lastName,
@@ -42,7 +42,7 @@ public class User {
         this.createdAt = LocalDateTime.now();
     }
 
-    // Getters and Setters
+    
     public Integer getUserId() { return userId; }
     public void setUserId(Integer userId) { this.userId = userId; }
 
