@@ -17,7 +17,7 @@ public class Offer {
     @Column(name = "offer_description", length = 200)
     private String offerDescription;
 
-    // Constructors
+    
     public Offer() {}
 
     public Offer(Product product, String offerDescription) {
@@ -25,7 +25,7 @@ public class Offer {
         this.offerDescription = offerDescription;
     }
 
-    // Getters and Setters
+    
     public Integer getOfferId() { return offerId; }
     public void setOfferId(Integer offerId) { this.offerId = offerId; }
 
