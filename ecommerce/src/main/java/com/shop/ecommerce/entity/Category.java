@@ -22,7 +22,7 @@ public class Category {
     @JsonIgnore
     private List<Product> products;
 
-    // Constructors
+    
     public Category() {}
 
     public Category(String categoryName, String description) {
@@ -30,7 +30,7 @@ public class Category {
         this.description = description;
     }
 
-    // Getters and Setters
+    
     public Integer getCategoryId() { return categoryId; }
     public void setCategoryId(Integer categoryId) { this.categoryId = categoryId; }
 
