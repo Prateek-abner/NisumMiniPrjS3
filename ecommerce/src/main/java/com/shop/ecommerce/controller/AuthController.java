@@ -43,7 +43,7 @@ public class AuthController {
 
             System.out.println("🔐 Login attempt for email: " + email);
 
-            // Basic validation
+            
             if (email == null || email.trim().isEmpty()) {
                 response.put("message", "Email is required");
                 response.put("success", false);
@@ -56,7 +56,7 @@ public class AuthController {
                 return ResponseEntity.badRequest().body(response);
             }
 
-            // Find user by email
+        
             Optional<User> userOptional = userRepository.findByEmail(email.trim().toLowerCase());
 
             if (userOptional.isPresent()) {
@@ -107,7 +107,7 @@ public class AuthController {
             System.out.println("📝 Registration attempt for: " + email);
             System.out.println("📝 Request data: " + firstName + " " + lastName);
 
-            // Validation
+            
             if (firstName == null || firstName.trim().isEmpty()) {
                 response.put("message", "First name is required");
                 response.put("success", false);
@@ -132,7 +132,7 @@ public class AuthController {
                 return ResponseEntity.badRequest().body(response);
             }
 
-            // Check if email already exists
+            
             boolean emailExists = userRepository.existsByEmail(email.trim().toLowerCase());
             if (emailExists) {
                 System.out.println("❌ Email already exists: " + email);
@@ -141,11 +141,11 @@ public class AuthController {
                 return ResponseEntity.badRequest().body(response);
             }
 
-            // Get next available UserID
+            
             Integer nextUserId = getNextUserId();
             System.out.println("🆔 Next UserID: " + nextUserId);
 
-            // Create new user
+            
             User newUser = new User();
             newUser.setUserId(nextUserId);
             newUser.setFirstName(firstName.trim());
@@ -155,7 +155,7 @@ public class AuthController {
             newUser.setPhoneNumber(phoneNumber);
             newUser.setCreatedAt(LocalDateTime.now());
 
-            // Save user to database
+            
             User savedUser = userRepository.save(newUser);
             System.out.println("✅ User registered successfully: " + savedUser.getUserId());
 
@@ -201,11 +201,11 @@ public class AuthController {
             Integer maxId = userRepository.findAll().stream()
                     .mapToInt(User::getUserId)
                     .max()
-                    .orElse(4); // Start from 5 since you have 1-4
+                    .orElse(4); 
             return maxId + 1;
         } catch (Exception e) {
             System.out.println("⚠️ Error getting next UserID, using fallback: " + e.getMessage());
-            return 5; // Fallback to 5
+            return 5; 
         }
     }
 }
