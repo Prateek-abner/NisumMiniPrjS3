@@ -49,10 +49,10 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Offer> offers;
 
-    // Constructors
+    
     public Product() {}
 
-    // Getters and Setters
+    
     public String getProductId() { return productId; }
     public void setProductId(String productId) { this.productId = productId; }
 
