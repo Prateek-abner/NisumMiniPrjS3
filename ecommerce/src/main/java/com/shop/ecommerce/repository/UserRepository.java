@@ -29,7 +29,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(value = "SELECT * FROM Users1 WHERE created_at >= DATE_SUB(NOW(), INTERVAL :days DAY)", nativeQuery = true)
     List<User> findRecentUsers(@Param("days") int days);
 
-    // Helper method to convert Integer result to boolean
+    
     default boolean existsByEmail(String email) {
         Integer result = existsByEmailNative(email);
         return result != null && result > 0;
