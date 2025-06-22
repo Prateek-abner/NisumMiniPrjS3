@@ -17,7 +17,7 @@ public class ProductSize {
     @Column(name = "size", nullable = false, length = 10)
     private String size;
 
-    // Constructors
+    
     public ProductSize() {}
 
     public ProductSize(Product product, String size) {
@@ -25,7 +25,7 @@ public class ProductSize {
         this.size = size;
     }
 
-    // Getters and Setters
+    
     public Integer getSizeId() { return sizeId; }
     public void setSizeId(Integer sizeId) { this.sizeId = sizeId; }
 
